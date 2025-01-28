@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="table.html">table</a></li>
+                <li><a href="blog.html">blog</a>
+                    <ul class="dropdown">
+                        <li><a href="blog.html">blog1</a></li>
+                        <li><a href="blog.html">blog2</a>
+                            <ul class="dropdown">
+                                <li><a href="blog.html">blog1</a></li>
+                                <li><a href="blog.html">blog2</a></li>
+                                <li><a href="blog.html">blog3</a></li>
+                                <li><a href="blog.html">blog4</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">blog3</a></li>
+                        <li><a href="blog.html">blog4</a></li>
+                    </ul>
+                </li>
+                <li><a href="../index.html">home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- html5 tags, html5 attributes -->
+
+    <main>
+        <!-- Emmet -->
+        <!-- section.sectionClass>h2#id*4>h4{Blog $}+p>lorem5^p>lorem4 -->
+        <!-- . => class, # => id, * => repeat, ^ => parent position / repeat form, $ => dynamic value -->
+        <section class="sectionClass">
+            <h2 id="id">
+                <h4>Blog 1</h4>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit.</p>
+            </h2>
+            <h2 id="id">
+                <h4>Blog 2</h4>
+                <p>Debitis fuga corporis incidunt quam!</p>
+                <p>Corporis consequuntur temporibus voluptatem?</p>
+            </h2>
+            <h2 id="id">
+                <h4>Blog 3</h4>
+                <p>Et ducimus veniam minima autem!</p>
+                <p>Cum impedit sapiente non.</p>
+            </h2>
+            <h2 id="id">
+                <h4>Blog 4</h4>
+                <p>Veniam maiores in animi earum!</p>
+                <p>Dolorem deleniti fuga pariatur.</p>
+            </h2>
+        </section>
+    </main>
+</body>
+</html>

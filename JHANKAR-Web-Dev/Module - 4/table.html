@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px, solid, black;
+            padding: 5px, 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>this one is good</h1>
+    <table>
+        <caption>Employee Salary Data</caption>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Bill Gates</td>
+                <td>Microsoft</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Steve Jobs</td>
+                <td>Apple</td>
+                <td>$1200</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry Page</td>
+                <td>Google</td>
+                <td>$1100</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mark Zuckerberg</td>
+                <td>Facebook</td>
+                <td>$1500</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total Employee: 4</td>
+            </tr>
+        </tfoot>
+
+    </table>
+    <ul>
+        <li>Table : table </li>
+        <li>Table Caption : caption</li>
+        <li>Table Head: thead
+            <ul>
+                <li>Table Head Cell : th</li>
+            </ul>
+        </li>
+        <li>Table Body : tbody </li>
+        <li>Table Footer : tfoot </li>
+        <li>Table Row : tr
+            <ul>
+                <li>Table Data/Cell : td </li>
+            </ul>
+        </li>
+        <li>Column Span: colspan</li>
+
+    </ul>
+
+
+    <h1>Below one is not good</h1>
+    <table border="1px">
+        <caption>Table Caption</caption>
+        <tr>
+            <th>No.</th>
+            <th>Name </th>
+            <th>Company </th>
+            <th>Salary </th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Bill Gates</td>
+            <td>Microsoft</td>
+            <td>$1000</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Steve Jobs</td>
+            <td>Apple</td>
+            <td>$1200</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Larry Page</td>
+            <td>Google</td>
+            <td>$1100</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Mark Zuckerberg</td>
+            <td>Facebook</td>
+            <td>$1500</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total Employee: 4</td>
+        </tr>
+    </table>
+</body>
+</html>

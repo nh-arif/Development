@@ -1,0 +1,147 @@
+/* font styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.open-sans-normal {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+/* header - background styles */
+header {
+    background-image: url('../images/developer.png'), url('../images/header_bg.png');
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+}
+
+/* nav styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10rem;
+    margin-right: 5rem;
+}
+
+nav>ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 51px;
+}
+
+
+nav li>a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(47, 47, 47);
+}
+
+.nav-title {
+    font-weight: 800;
+    font-size: 45px;
+}
+
+
+/* banner styles */
+.banner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5rem 0 10rem;
+}
+
+.banner-content {
+    max-width: 750px;
+}
+
+.banner-greet {
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.banner-title {
+    font-size: 85px;
+    font-weight: 800;
+}
+
+.banner-btn {
+    display: flex;
+}
+
+.banner-img {
+    max-width: 580px;
+}
+
+
+
+
+/* shared styles */
+.dev-name {
+    color: #FD6E0A;
+}
+
+.btn-orange {
+    background-color: #FD6E0A;
+    color: white;
+    border: none;
+    height: 64px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 25px;
+
+}
+
+.btn-white {
+    background-color: white;
+    color: #FD6E0A;
+    height: 64px;
+    border-radius: 5px;
+    border-color: #FD6E0A;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 25px;
+    margin-left: 10px;
+}
+
+.dark-1 {
+    color: #181818;
+}
+
+.dark-2 {
+    color: #454545;
+}
+
+.dark-3 {
+    color: #757575;
+}
+
+.secondary-bg {
+    background-color: #FFF8F3;
+
+}
+
+
+.section-title {
+    font-size: 35px;
+}
+
+.section-content {}
+
+.section-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    margin: 0 5rem;
+    align-items: center;
+}
+
+.about {}
