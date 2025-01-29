@@ -132,16 +132,31 @@ nav li>a {
     font-size: 35px;
 }
 
-.section-content {}
+.section-content {
+    margin: 30px, 0;
+}
 
-.section-box {
+.about-items {
     display: flex;
     justify-content: space-between;
 }
+
+.about-item {}
 
 .card {
     margin: 0 5rem;
     align-items: center;
 }
 
-.about {}
+.about {
+    padding: 130px 150px;
+    text-align: center;
+    margin-top: 130px;
+}
+
+
+/* main styles */
+main {
+    max-width: 1140px;
+    margin: 0 auto;
+}
