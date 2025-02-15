@@ -130,23 +130,25 @@ nav li>a {
 
 .section-title {
     font-size: 35px;
+    font-weight: bold;
+    color: #181818;
 }
 
 .section-content {
     margin: 30px, 0;
+    font-size: 18px;
+    color: #757575;
 }
 
-.about-items {
+.about-container {
     display: flex;
     justify-content: space-between;
 }
 
-.about-item {}
-
-.card {
-    margin: 0 5rem;
-    align-items: center;
+.about-item {
+    margin: 5px;
 }
+
 
 .about {
     padding: 130px 150px;
@@ -154,9 +156,57 @@ nav li>a {
     margin-top: 130px;
 }
 
+.about-title {
+    font-size: 20px;
+    color: #454545;
+}
+
+.about-description {
+    font-size: 20px;
+    font-weight: bold;
+    color: #181818;
+}
 
 /* main styles */
 main {
     max-width: 1140px;
     margin: 0 auto;
 }
+
+.my-skill {
+    width: 100%;
+    text-align: center;
+}
+
+.skill-container {
+    margin-top: 50px;
+    display: flex;
+    gap: 24px;
+
+}
+
+.skill-item {
+    text-align: left;
+    padding: 33px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.skill-title {
+    color: #181818;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.skill-description {
+    color: #757575;
+    font-size: 16px;
+}
+
+.skill-img {
+    height: 44px;
+    width: 44px;
+}
+
+
+/* Resume styles */
+.resume {}
