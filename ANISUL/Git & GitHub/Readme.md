@@ -77,6 +77,30 @@
   - `git log` -> (version details of files)
   - `git log --oneline` ->(short info)
   - `git reset --soft` `"commitId from log"` or `HEAD` -> (to go back to previous commit/staging area)
-  - `git reset "commitId from log"`or `HEAD` -> (to go back to previous commit/working directory)
-  - `git reset --hard HEAD` -> (to go back to initial commit)
-  - `git checkout "commitId from log"` -> (go to specific commit)
+  - `git reset "commitId"` or `HEAD` -> (to go back to previous commit/working directory)
+  - `git reset --hard "commitId"` or HEAD` -> (to go back to initial commit)
+  - `git checkout "commitId"` -> (go to specific commit and changes everything according to the commitID)
+
+## Error and Solution
+
+> Error
+
+`git status`
+
+```cmd
+HEAD detached at eca1152
+nothing to commit, working tree clean
+```
+
+> Solution
+
+`git checkout master`
+
+```cmd
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+if wanted new brand for this
+
+`git checkout -b my-new-branch`
