@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo</title>
+    <style>
+        /* Hover effect */
+        .CSS-hover:hover {
+            color: red;
+        }
+
+        /* Focus effect */
+        .CSS-focus:focus {
+            color: green;
+            outline: 0;
+            border: 5px solid rgba(17, 255, 0, 0.17);
+            padding: 5px 20px;
+            font-size: 20px;
+        }
+
+        /* Link styles */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        ul li:first-child {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* Last child styling */
+        ul li:last-child {
+            color: rgb(0, 255, 225);
+            background-color: whitesmoke;
+            font-weight: 1000;
+            /* Last child color */
+        }
+
+
+        /* Nth-child styling, n = 3, then every third child, without n, it will apply to specific child*/
+        ul li:nth-child(2),
+        ul li:nth-child(3) {
+            color: rgb(0, 255, 42);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Pseudo</h2>
+        <ul>
+            <li class="CSS-hover">CSS : <a href="http://www.google.com">Hover</a></li>
+            <li class="CSS-hover">CSS : <a href="http://www.facebook.com">Input:Focus</a></li>
+            <li class="CSS-hover">CSS : <a href="http://www.youtube.com">Visited</a></li>
+            <li class="CSS-hover">CSS : <a href="http://www.laracast.com">Nth-child</a></li>
+        </ul>
+    </header>
+    <main>
+        <form action="">
+            <input type="text" placeholder="Text Goes Here" class="CSS-focus"><br>
+            <input type="text" placeholder="Text Goes Here" class=""><br>
+            <input type="text" placeholder="Text Goes Here" class="CSS-focus"><br>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

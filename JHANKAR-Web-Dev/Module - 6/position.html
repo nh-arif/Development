@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        div {
+            height: 100px;
+            width: 120px;
+            border: 5px solid green;
+            margin-bottom: 500px;
+        }
+
+        /* Static: Default positioning, top, left, bottom, right doesn't affect this */
+        .position-static {
+            position: static;
+            top: 50px;
+            left: 50px;
+        }
+
+
+        /* Relative: From the current placement, without leaving the element space */
+        .position-relative {
+            position: relative;
+            top: 50px;
+            left: 200px;
+        }
+
+        /* Absolute: From the Page placement, leaving the element space */
+        .position-absolute {
+            position: absolute;
+            top: 50px;
+            left: 350px;
+        }
+
+        /* Fixed: From the Page placement, without moving with page */
+        .position-fixed {
+            position: fixed;
+            top: 50px;
+            left: 500px;
+        }
+
+        /* Sticky: From the Page placement, without moving with page but if relative and static parent[going from side of this] is present, it will be relative to that */
+        .position-sticky {
+            position: sticky;
+            top: 50px;
+            left: 650px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Related -->
+    <div class="position-sticky">Sticky Position</div>
+    <div class="position-fixed">Fixed Position </div>
+    <!-- Flow Related -->
+    <div class="position-absolute">Absolute Position </div>
+    <div class="position-static">Static Position </div>
+    <div class="position-relative">Relative Position </div>
+</body>
+</html>

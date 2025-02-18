@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo Element: with class and tag</title>
+    <style>
+        p::first-line {
+            color: aqua;
+        }
+
+        .css-first-letter::first-letter {
+            color: green;
+            font-size: 28px;
+            font-weight: bolder;
+        }
+
+        /* Selection: How selected content will behave after selection */
+        p::selection {
+            color: red;
+            background-color: yellowgreen;
+        }
+
+        /* After: Addition after the content */
+        p::after {
+            content: "This is after pseudo element : ";
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* Before: Addition before the content */
+        .css-before::before {
+            content: "This is before pseudo element : ";
+            color: purple;
+        }
+
+        input::placeholder {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <p class="css-before css-first-letter">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus odio
+        blanditiis mollitia, tempora deleniti neque amet id non consequatur voluptatibus.</p>
+    <input type="text" placeholder="Enter your name">
+</body>
+</html>
