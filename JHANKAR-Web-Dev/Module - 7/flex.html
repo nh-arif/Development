@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        .container {
+            border: 2px solid salmon;
+            height: 400px;
+            display: flex;
+            /* flex-direction: row/column/row-reverse/column-reverse/initial -> which way item align*/
+            flex-direction: row;
+            /* -> horizontal alignment */
+            justify-content: space-around;
+            /* -> vertical alignment */
+            align-items: center;
+            /*flex-start, flex-end, center, space-between, space-around, space-evenly */
+
+            /* flex-wrap: wrap-reverse/nowrap/wrap; -> whether items can wrap */
+            flex-wrap: wrap;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 2px dashed green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex layout</h1>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 7</div>
+    </div>
+</body>
+</html>
