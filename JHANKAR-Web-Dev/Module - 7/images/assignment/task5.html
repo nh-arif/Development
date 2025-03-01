@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Responsive Layout - 1</title>
+    <style>
+        main {}
+
+        .blog {
+            display: flex;
+        }
+
+        img {
+            width: 50%;
+            /* border: 2px solid green; */
+        }
+
+        .blog:nth-child(2n) {
+            flex-direction: row-reverse;
+        }
+
+        .content {
+            width: 50%;
+            /* border: 2px solid tomato; */
+            padding: 10px;
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 576px) {
+            .blog {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+
+            .blog:nth-child(2n) {
+                flex-direction: column;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            .content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="blog">
+            <img src="../food.webp" alt="">
+            <div class="content">
+                <h2>Blog - 1: Why do we use it?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, corporis? Iusto repellat at sapiente
+                    reprehenderit aperiam in. Recusandae, consectetur officiis?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum perferendis hic praesentium aliquid
+                    natus earum expedita temporibus, aspernatur blanditiis dignissimos!</p>
+            </div>
+        </div>
+        <div class="blog">
+            <img src="../food.webp" alt="">
+            <div class="content">
+                <h2>Blog - 2: Why do we use it?</h2>
+                <p>Quia aliquam libero dolor accusantium dolores sapiente magni voluptatum fugiat id, harum, unde ad
+                    totam quas, facere ut? Dignissimos, itaque?</p>
+                <p>Facere minima dolores quos inventore dignissimos possimus expedita corrupti officiis, adipisci
+                    consequuntur ab facilis? Laboriosam sit asperiores nobis laudantium delectus!</p>
+            </div>
+        </div>
+        <div class="blog">
+            <img src="../food.webp" alt="">
+            <div class="content">
+                <h2>Blog - 3: Why do we use it?</h2>
+                <p>Illum obcaecati assumenda hic atque beatae vitae vero, aliquid vel voluptatum debitis architecto illo
+                    sit earum dignissimos amet. Expedita, fuga.</p>
+                <p>Tempora, neque optio necessitatibus aspernatur voluptas nemo distinctio. At inventore aut voluptates
+                    veniam aspernatur velit odio voluptate porro quos consequuntur?</p>
+            </div>
+        </div>
+        <div class="blog">
+            <img src="../food.webp" alt="">
+            <div class="content">
+                <h2>Blog - 4: Why do we use it?</h2>
+                <p>Mollitia molestiae neque aut, temporibus animi reprehenderit omnis, ex libero unde tenetur suscipit
+                    similique possimus doloribus vero alias placeat autem.</p>
+                <p>Numquam adipisci non consequatur pariatur incidunt? Beatae voluptas optio temporibus perspiciatis
+                    culpa, officia tempore, quidem voluptate, natus dolorum aut aperiam.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

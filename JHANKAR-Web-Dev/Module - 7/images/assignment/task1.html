@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+            height: 90vh;
+
+        }
+
+        section .sides:first-child {
+            background-color: gray;
+        }
+
+        section .sides:last-child {
+            background-color: antiquewhite;
+        }
+
+        section .sides {
+            border: 2px dotted tomato;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4em;
+        }
+
+        @media screen and (max-width: 576px) {
+            section {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: 1fr 2fr;
+                gap: 10px;
+            }
+
+            .sides {
+                font-size: 3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="sides">Left</div>
+        <div class="sides">Right</div>
+    </section>
+</body>
+</html>

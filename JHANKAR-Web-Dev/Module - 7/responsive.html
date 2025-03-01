@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <style>
+        .image-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image {
+            width: 50%;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* @media [media type] and (break point expressions){css code}*/
+        @media screen and (max-width: 576px) {
+            .image-container {
+                flex-direction: column;
+            }
+
+            .image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Responsive Website</h2>
+        <ol>
+            <li>Viewport meta tag</li>
+            <li>CSS Relative unit</li>
+            <li>body max width and horizontal center align</li>
+            <li>image fluid</li>
+            <li>two column flex and use media query with flex direction column</li>
+            <li>multi column: grid layout</li>
+            <li>menu responsive: required javascript</li>
+        </ol>
+    </header>
+    <main>
+        <section class="image-container">
+            <div class="image">
+                <img src="images/food.webp" alt="">
+            </div>
+            <div class="image">
+                <img src="images/food.webp" alt="">
+            </div>
+        </section>
+    </main>
+</body>
+</html>

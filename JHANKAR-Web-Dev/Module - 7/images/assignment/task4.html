@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive layout</title>
+    <style>
+        .main {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .blog {
+            display: flex;
+            gap: 10px;
+            height: 50vh;
+            border: 2px solid gray;
+            margin-bottom: 20px;
+        }
+
+        button {
+            /* background-color: rgba(0, 111, 222, 0.844); */
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .blog {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- main>.blog*2>img[src="../food.webp"]+.content>h3{Post Titile Will Be Here}+p>lorem20^btn[type=button]{Read More} -->
+    <main>
+        <div class="blog">
+            <img src="../food.webp" alt="">
+            <div class="content">
+                <h3>Post Titile Will Be Here</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem modi porro ipsam adipisci
+                    eaque fuga temporibus est repellendus minima maiores!</p>
+                <button type="button">Read More</button>
+            </div>
+        </div>
+        <div class="blog">
+            <img src="../food.webp" alt="">
+            <div class="content">
+                <h3>Post Titile Will Be Here</h3>
+                <p>Eaque, ab est. Ratione rem corporis natus quaerat, dicta tempora dolor nam provident molestiae quis.
+                    Fuga quaerat enim sed amet!</p>
+                <button type="button">Read More</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
