@@ -10,9 +10,14 @@ def ask_if_missing(value, field_name, fmt_hint=None, default=None):
         if default is not None:
             return default
         if fmt_hint:
-            return input(f"Enter {field_name} ({fmt_hint}): ").strip()
+            user_input = input(f"Enter {field_name} ({fmt_hint}): ")
         else:
-            return input(f"Enter {field_name}: ").strip()
+            user_input = input(f"Enter {field_name}: ")
+        
+        # If user enters just a space, treat as empty
+        if user_input == " ":
+            return ""
+        return user_input.strip()
     return str(value).strip()
 
 
@@ -65,7 +70,11 @@ def get_template_file(template_no, course, last_template):
     """Decide which template file to use"""
     # Special case: LEVEL 1 HEALTH AND SAFETY (case-insensitive, flexible)
     if "level 1 health and safety" in course.lower():
-        template_no = 2
+        # If template number is provided, use it; otherwise default to template 2
+        if pd.isnull(template_no) or str(template_no).strip() == "":
+            template_no = 2
+        else:
+            template_no = clean_template_no(template_no, last_template)
     else:
         template_no = clean_template_no(template_no, last_template)
 
@@ -96,6 +105,11 @@ def generate_certificates(excel_file):
     last_tutor = None
     last_validation = None
     last_template = None
+    
+    # Track if user has been asked for input (to avoid asking multiple times)
+    user_asked_course = False
+    user_asked_tutor = False
+    user_asked_date = False
 
     certificates = []
 
@@ -106,17 +120,38 @@ def generate_certificates(excel_file):
 
         # Course
         course = row.get("Course", "")
-        course = course if pd.notnull(course) and str(course).strip() else last_course
-        if not course:
+        if pd.notnull(course) and str(course).strip():
+            course = str(course).strip()
+            last_course = course
+        elif last_course:
+            course = last_course
+        elif not user_asked_course:
             course = ask_if_missing("", "Course")
-        last_course = course
+            if course:
+                last_course = course
+            user_asked_course = True
+        else:
+            course = last_course if last_course else ""
 
         # Tutor
         tutor = row.get("Tutor", "")
-        tutor = tutor if pd.notnull(tutor) and str(tutor).strip() else last_tutor
-        if not tutor:
-            tutor = ask_if_missing("", "Tutor")
-        last_tutor = tutor
+        if pd.notnull(tutor) and str(tutor).strip():
+            tutor = str(tutor).strip()
+            last_tutor = tutor
+        elif last_tutor is not None:  # Use last_tutor if it exists (could be empty string)
+            tutor = last_tutor
+        elif not user_asked_tutor:
+            # Ask for tutor input once, but allow it to be empty
+            tutor_input = ask_if_missing("", "Tutor")
+            if tutor_input:
+                tutor = tutor_input
+                last_tutor = tutor
+            else:
+                tutor = ""
+                last_tutor = ""  # Remember that user chose empty
+            user_asked_tutor = True
+        else:
+            tutor = last_tutor if last_tutor is not None else ""
 
         # Validation
         validation = row.get("Validation", "")
@@ -141,12 +176,16 @@ def generate_certificates(excel_file):
         if (parsed_date is pd.NaT or parsed_date is None) and last_date:
             parsed_date = last_date
 
-        if (parsed_date is pd.NaT or parsed_date is None):
+        if (parsed_date is pd.NaT or parsed_date is None) and not user_asked_date:
             date_input = ask_if_missing("", "Date", "dd-mm-yyyy")
             parsed_date = pd.to_datetime(date_input, dayfirst=True, errors="coerce")
+            user_asked_date = True
 
         if parsed_date is pd.NaT or parsed_date is None:
-            raise ValueError(f"❌ Could not parse date for row with Name='{name}'. Please ensure Date is in dd-mm-yyyy format.")
+            if last_date:
+                parsed_date = last_date
+            else:
+                raise ValueError(f"❌ Could not parse date for row with Name='{name}'. Please ensure Date is in dd-mm-yyyy format.")
 
         last_date = parsed_date
 
@@ -157,7 +196,13 @@ def generate_certificates(excel_file):
 
         # Template
         template_no = row.get("Template", "")
-        template_file, last_template = get_template_file(template_no, course, last_template)
+        
+        # Use last template if current row has no template specified
+        if pd.isnull(template_no) or str(template_no).strip() == "":
+            template_no = last_template
+        
+        template_file, current_template = get_template_file(template_no, course, last_template)
+        last_template = current_template
 
         certificates.append({
             "name": name.upper(),
@@ -167,7 +212,7 @@ def generate_certificates(excel_file):
             "cert_date": cert_date,
             "folder_date": folder_date,
             "template_file": template_file,
-            "template_no": last_template
+            "template_no": current_template
         })
 
     total = len(certificates)
