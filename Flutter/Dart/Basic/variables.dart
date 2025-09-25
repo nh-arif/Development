@@ -1,6 +1,9 @@
+late String globalLateVariable =
+    "Will be initialize if used"; // initialized later before use, function call will not happen if not used -> saves memory & time
+
 void main() {
-  int ID = 75;
-  double CGPA = 3.62;
+  final int ID = 75;
+  const double CGPA = 3.62;
   bool isRegistered = true;
   String? Name; // nullable variable
   Name ??= "Nahid"; // if name is null then assign "Nahid"
@@ -17,8 +20,9 @@ void main() {
 
   var name = "Nahid Hasan Arif";
   var age = 24;
-  var fullNameAndAge = [name, "Hasan", "Arif", age];
+  var fullNameAndAge = [name, "Hasan", "Arif", age]; //list
   var address = {
+    //map
     "city": ["Rangpur Sadar", "Rangpur"],
     "country": "Bangladesh",
     "zip": 5400,
@@ -28,4 +32,24 @@ void main() {
 
   print(fullNameAndAge);
   print(address);
+
+  //globalLateVariable = "Initialized late variable";
+  print(globalLateVariable);
+
+  var foo = const [];
+  foo = [1, 2, 3]; // ✅ allowed
+  foo.add(4); // ❌ error, because the original list was const
+  foo[0] = 2;
+  foo[0] = 4;
+  print(foo);
+
+  final bar = const [];
+  //bar = [1, 2, 3]; // ❌ error (can’t reassign a final variable)
+  //bar.add(4); // ❌ error (const list is immutable)
+  print(bar);
+
+  const baz = const [];
+  //baz = [1, 2, 3]; // ❌ error (can’t reassign a const variable)
+  //baz.add(4); // ❌ error (const list is immutable)
+  print(baz);
 }
